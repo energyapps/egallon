@@ -166,10 +166,17 @@ height: 480px;
     float: right;
 }
 
-#bottom_right a {
+#bottom_right a, #bottom_right p {
         color: #93C528 !important;
         font-weight: 300;
         font-size: 12px;
+        margin-bottom: 0px;
+        padding-bottom: 0px;
+        line-height: 11px;
+}
+
+#bottom_right p {
+    color: #fff !important;
 }
 
 #right_text {

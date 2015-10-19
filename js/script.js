@@ -8,7 +8,8 @@ for (var i = 0; i<loop2.length; i++) {
 
 (function ($) { 
 	$(document).ready(function(){
-	    $.getJSON("js/combined.json",function(result){
+	    $.getJSON("/egallon-json/current/combined.json",function(result){
+        // $.getJSON("http://energy.gov/egallon-json/current/combined.json",function(result){
 
 		    var mySelect = $('#mySelect');
             $.each(result['states'], function(i, field){
@@ -16,6 +17,8 @@ for (var i = 0; i<loop2.length; i++) {
                 	$('<option></option>').val(i).html(field.name)
 	            );
 	        });			
+        
+            $('#date').text(result.dateGenerated)
 
             // Inital run set to USA
 	    	i = 44;
@@ -39,9 +42,6 @@ for (var i = 0; i<loop2.length; i++) {
 }(jQuery));  
 
 function newState(i, egallon, oil, state){
-	console.log(i)
-	console.log(state)
-	
 	var onesE = String(egallon).charAt(0);
 	var tenthsE = String(egallon).charAt(2);
 	var hundrethsE = String(egallon).charAt(3);
